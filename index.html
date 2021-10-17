@@ -3,33 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="main-container">
+        <header class="head">
+        <h1>Rock Paper Scissors</h1>
+        <p class="sub-p">click on the button to play and refresh to restart</p>
+    </header>
+        <div class="sub-container">
 
-        <div class="sub-container-row">
-            <div class="container">
-                <img src="images/rock.png" alt="" width="100px">
-                <button id="rock">Rock</button>
+            <div class="flex-row">
+                <div class="flex-column">
+                    <img src="images/rock.png" alt="" width="100px">
+                    <button id="rock">Rock</button>
+                </div>
+                <div class="flex-column">
+                    <img src="images/paper.png" alt="" width="100px">
+
+                    <button id="paper">Paper</button>
+                </div>
+                <div class="flex-column">
+                    <img src="images/scissors.png" alt="" width="100px">
+
+                    <button id="scissors">scissors</button>
+                </div>
+
             </div>
-            <div class="container">
-                <img src="images/paper.png" alt="" width="100px">
-
-                <button id="paper">Paper</button>
-            </div>
-            <div class="container">
-                <img src="images/scissors.png" alt="" width="100px">
-
-                <button id="scissors">scissors</button>
-            </div>
-
-        </div>
             <div id="winner">
+
             </div>
+          
         </div>
+        <footer>
+            <p class="sub-p"> Copyright &copy; The Odin Project 2021 </p>
+        </footer>
+    </div>
 
 </body>
 <script type="text/javascript" src="external.js"></script>
