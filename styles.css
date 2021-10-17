@@ -1,62 +1,89 @@
-body{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border:1px solid rgb(236, 0, 0);
-    justify-content: space-evenly;
-width:100vw;
-height:100vh;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
-.main-container{
+
+.main-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100%;
+    background-color: #d9d9d9;
+
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-basis: 30%;
+}
+
+.flex-row {
+    display: flex;
+    gap: 18px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+    border: 2px solid #264653;
+}
+
+.sub-container {
     display: flex;
     flex-basis: 70%;
     flex-direction: column;
-    border:1px solid black;
-    align-items: center;
     justify-content: space-evenly;
 
 }
-    
-    .sub-container-row{
-    display: flex;
-    flex-direction: row;
-    border:1px solid red;
-    gap:18px;
+
+button {
+    width: 100%;
+    background-color: #f4b942;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-
-.container{
-    display: flex;
-    flex-direction: column;
-    border:1px solid rgb(2, 199, 35);
-    width:200px;
-    align-items: center;
+button:hover {
+    background-color: #2e6f95;
+    color: white;
 }
 
-button{
-    width:100%;
-
-}
-
-#winner{
+#winner {
     display: flex;
-
     flex-basis: 40%;
-
-background-color: rgb(99, 99, 99);
+    align-items: center;
+    background-color: 003049;
     justify-content: center;
-align-items: center;
-width: 100%;
-color: white;
-
-}
-img{
-    width: 200px;
+    width: 100%;
+    color: white;
 }
 
-p{
-color:rgb(250, 209, 209);
+img {
+    width: 100%;
+}
 
+p {
+    color: rgb(250, 209, 209);
+    line-height: 50px;
+    text-align: center;
+}
+
+.sub-p {
+    color: rgb(0, 0, 0);
 }
