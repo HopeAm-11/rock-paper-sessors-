@@ -1,3 +1,6 @@
+let winner = document.querySelector("#winner");
+let para = document.createElement("p");
+winner.appendChild(para);
 
 
 function computerPlay() {
@@ -6,57 +9,59 @@ function computerPlay() {
     return randomComputerChoice;
 }
 
-const computerSelection = computerPlay();
 let playerSelection = "rock";
+let computerSelection = computerPlay();
 
 
 function playRound(computerSelection, playerSelection) {
     playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerPlay();
 
     if (playerSelection === "rock" && computerSelection === "rock") {
-        //return "Its draw";
-        console.log("draw")
+        computerSelection = computerPlay();
+
+        para.innerHTML = "You picked rock computer picked rock <br>Its a Draw </br> Player score " + playerScore + "Computer Score: " + computerScore;
+
+
     } else if (playerSelection === "paper" && computerSelection === "paper") {
-       // return "Its draw";
-       console.log("draw")
+
+
+        para.innerHTML = "You picked paper computer picked paper <br>Its a Draw </br> Player score " + playerScore + "Computer Score: " + computerScore;
 
     } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-       // return "Its draw";
-       console.log("draw")
+
+        para.innerHTML = "You picked scissors computer picked scissors <br>Its a Draw </br> Player score " + playerScore + "Computer Score: " + computerScore;
+
 
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         ++computerScore;
-       // return "player lost";
-       console.log("player lost")
+
+        para.innerHTML = "You picked rock computer picked paper <br>Computer won</br> Player score " + playerScore + "Computer Score: " + computerScore;
 
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         ++playerScore
-       // return "computer lost";
-       console.log("computer lost")
+
+        para.innerHTML = "You picked rock computer picked scissors <br>Player won</br> Player score " + playerScore + "Computer Score: " + computerScore;
 
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         ++computerScore;
-      //  return "player lost";
-      console.log("player lost")
+
+        para.innerHTML = "You picked scissors computer picked rock <br>Computer won </br> Player score " + playerScore + "Computer Score: " + computerScore;
 
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         ++playerScore
-        //return "computer lost";
-        console.log("computer lost")
+
+        para.innerHTML = "You picked scissors computer picked paper <br>Player won </br> Player score " + playerScore + "Computer Score: " + computerScore;
 
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         ++playerScore
-       // return "computer lost";
-       console.log("computer lost")
+
+        para.innerHTML = "You picked paper computer picked rock <br>Player won </br> Player score " + playerScore + "Computer Score: " + computerScore;
 
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         ++computerScore;
-       // return "player lost";
-       console.log("player lost ")
 
-    } else {
-       // return "input is wrong";        
-       console.log("sad")
+        para.innerHTML = "You picked paper computer picked scissors <br>Computer won </br> Player score " + playerScore + "Computer Score: " + computerScore;
 
     }
 }
@@ -64,34 +69,36 @@ function playRound(computerSelection, playerSelection) {
 let computerScore = 0;
 let playerScore = 0;
 
-//function game() {
-   
-  //  if (computerScore > playerScore) {
-        //return "computer won yay";
-  //  } else if (computerScore < playerScore) {
-        //return "player won yay";
-   // } else {
-       // return "its a draw yay";
-  //  }
+function game() {
+    if (computerScore === 5) {
+        para.innerHTML = `computer won after 5 rounds ` + `Player score  ${playerScore} ` + `Computer Score 
+        ${computerScore}`;
+        computerScore = 0;
+        playerScore = 0;
+    } else if (playerScore === 5) {
+        para.innerHTML = `player won after 5 rounds ` + `Player score  ${playerScore} ` + `Computer Score 
+        ${computerScore}`;
+        computerScore = 0;
+        playerScore = 0;
 
-    // if computerScore > playerScore return computer won 
-    // if computerScore < playerScore return player won 
-    // otherwise its a draw 
-//}
-
-//console.log(game());
-
+    }
+}
 const rock = document.querySelector("#rock");
-rock.addEventListener("click", function(){
-    console.log(playRound(computerSelection,"rock"))
+rock.addEventListener("click", function () {
+    playRound(computerSelection, "rock")
+    game();
+
 });
 
 const paper = document.querySelector("#paper");
-paper.addEventListener("click", function(){
-    console.log(playRound(computerSelection,"paper"))
+paper.addEventListener("click", function () {
+    playRound(computerSelection, "paper")
+    game();
+
 });
 
 const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", function(){
-    console.log(playRound(computerSelection,"scissors"))
+scissors.addEventListener("click", function () {
+    playRound(computerSelection, "scissors");
+    game();
 });
